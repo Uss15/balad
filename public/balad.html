@@ -321,25 +321,33 @@ textarea{min-height:90px;resize:vertical}
     setTimeout(function(){t.style.display='none';},1800);
   }
 
-  // ---- admin unlock ----
-  var clicks=0,timer=null;
-  document.getElementById('secretSpot').addEventListener('click',function(){
-    clicks++;clearTimeout(timer);
-    timer=setTimeout(function(){clicks=0;},1200);
-    if(clicks>=5){clicks=0;document.getElementById('loginOverlay').classList.add('open');document.getElementById('pwInput').focus();}
-  });
+  // ---- admin access via /admin ----
+  function openLogin(){
+    document.getElementById('loginOverlay').classList.add('open');
+    document.getElementById('userInput').focus();
+  }
+  function isAdminUrl(){
+    var p=(location.pathname||'')+(location.hash||'')+(location.search||'');
+    return /admin/i.test(p);
+  }
+  if(isAdminUrl()) openLogin();
+  window.addEventListener('hashchange',function(){ if(isAdminUrl()) openLogin(); });
+
   document.getElementById('pwCancel').onclick=function(){document.getElementById('loginOverlay').classList.remove('open');};
   function tryLogin(){
-    if(document.getElementById('pwInput').value===PASS){
+    if(document.getElementById('userInput').value.trim()===USER && document.getElementById('pwInput').value===PASS){
       document.getElementById('pwErr').style.display='none';
       document.getElementById('pwInput').value='';
+      document.getElementById('userInput').value='';
       document.getElementById('loginOverlay').classList.remove('open');
       buildPanel();
       document.getElementById('panel').classList.add('open');
     } else {document.getElementById('pwErr').style.display='block';}
   }
   document.getElementById('pwBtn').onclick=tryLogin;
+  document.getElementById('userInput').addEventListener('keydown',function(e){if(e.key==='Enter')tryLogin();});
   document.getElementById('pwInput').addEventListener('keydown',function(e){if(e.key==='Enter')tryLogin();});
+
   document.getElementById('closeBtn').onclick=function(){document.getElementById('panel').classList.remove('open');};
   document.getElementById('saveBtn').onclick=save;
   document.getElementById('resetBtn').onclick=function(){

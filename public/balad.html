@@ -7,13 +7,13 @@
 <meta name="description" content="معمل تعليب بلد للمنتجات الغذائية في قضاء بلد، صلاح الدين، العراق - معجون الطماطة والمخللات والمنتجات الغذائية." />
 <style>
 :root{
-  --green:#0f7a3d;
-  --green-dark:#0a5b2c;
-  --gold:#c9a227;
+  --green:#466a3f;
+  --green-dark:#172b1b;
+  --gold:#d6a84a;
   --white:#ffffff;
-  --bg:#f7faf7;
-  --text:#1d2b21;
-  --muted:#5c6b60;
+  --bg:#f3f0e7;
+  --text:#1f2a1e;
+  --muted:#637060;
   --font:'Segoe UI', Tahoma, Arial, sans-serif;
   --fsize:16px;
 }
@@ -21,7 +21,7 @@
 body{font-family:var(--font);font-size:var(--fsize);background:var(--bg);color:var(--text);line-height:1.8}
 img{max-width:100%;display:block}
 .container{max-width:1120px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:0;z-index:50;background:var(--green);color:#fff;box-shadow:0 2px 12px rgba(0,0,0,.15)}
+header{position:sticky;top:0;z-index:50;background:rgba(23,43,27,.96);color:#fff;box-shadow:0 2px 18px rgba(0,0,0,.2);backdrop-filter:blur(12px)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px;max-width:1120px;margin:0 auto}
 .brand{display:flex;align-items:center;gap:12px;min-width:0}
 .logo{width:46px;height:46px;flex:0 0 auto;border-radius:50%;background:var(--gold);color:var(--green-dark);display:grid;place-items:center;font-weight:900;font-size:18px}
@@ -29,34 +29,42 @@ header{position:sticky;top:0;z-index:50;background:var(--green);color:#fff;box-s
 .menu{display:flex;gap:18px;flex-wrap:wrap}
 .menu a{color:#fff;text-decoration:none;font-weight:600;opacity:.92}
 .menu a:hover{color:var(--gold)}
-.hero{background:linear-gradient(135deg,var(--green-dark),var(--green));color:#fff;padding:80px 0;text-align:center;position:relative;overflow:hidden}
-.hero:after{content:"";position:absolute;inset:auto -80px -120px auto;width:320px;height:320px;border-radius:50%;background:rgba(201,162,39,.18)}
-.hero .big-logo{width:110px;height:110px;margin:0 auto 20px;border-radius:50%;background:var(--gold);color:var(--green-dark);display:grid;place-items:center;font-size:34px;font-weight:900;border:6px solid rgba(255,255,255,.25)}
-.hero h2{font-size:2.2rem;margin-bottom:10px}
-.hero p{max-width:640px;margin:0 auto 26px;opacity:.95}
-.btn{display:inline-block;background:var(--gold);color:#20180a;padding:12px 28px;border-radius:999px;text-decoration:none;font-weight:800;border:none;cursor:pointer}
+.hero{min-height:630px;color:#fff;text-align:center;position:relative;overflow:hidden;display:grid;place-items:center;isolation:isolate}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,25,13,.78),rgba(10,25,13,.26),rgba(10,25,13,.66));z-index:-1}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(9,24,12,.58),transparent 55%);z-index:-1}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero .big-logo{width:96px;height:96px;margin:0 auto 22px;border-radius:50%;background:var(--gold);color:var(--green-dark);display:grid;place-items:center;font-size:30px;font-weight:900;border:5px solid rgba(255,255,255,.6);box-shadow:0 12px 35px rgba(0,0,0,.3)}
+.hero h2{font-size:clamp(2.1rem,5vw,4.2rem);line-height:1.15;margin-bottom:16px;text-shadow:0 3px 20px rgba(0,0,0,.35)}
+.hero p{max-width:720px;margin:0 auto 30px;opacity:.96;font-size:1.08rem;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+.hero-content{padding:90px 20px 72px}
+.eyebrow{color:#f4d98e;font-weight:800;letter-spacing:.08em;margin-bottom:13px}
+.btn{display:inline-block;background:var(--gold);color:#20180a;padding:13px 30px;border-radius:999px;text-decoration:none;font-weight:800;border:none;cursor:pointer;box-shadow:0 10px 25px rgba(0,0,0,.22)}
 .btn:hover{filter:brightness(1.08)}
 section{padding:64px 0}
 .title{text-align:center;margin-bottom:36px}
 .title h3{font-size:1.8rem;color:var(--green-dark);display:inline-block;position:relative;padding-bottom:12px}
 .title h3:after{content:"";position:absolute;bottom:0;right:25%;width:50%;height:4px;background:var(--gold);border-radius:4px}
 .title p{color:var(--muted);margin-top:10px}
-.about{background:#fff}
+.about{background:#fff;position:relative}
 .about-text{max-width:820px;margin:0 auto;text-align:center;color:var(--muted);font-size:1.05rem}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px}
-.card{background:#fff;border:1px solid #e6efe8;border-radius:16px;overflow:hidden;box-shadow:0 6px 20px rgba(15,122,61,.06);transition:.25s}
+.card{background:#fff;border:1px solid #e5e3d9;border-radius:16px;overflow:hidden;box-shadow:0 6px 20px rgba(23,43,27,.08);transition:.25s}
 .card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(15,122,61,.14)}
 .card .ph{height:180px;background:linear-gradient(135deg,#e8f3ec,#d7ead d);background:linear-gradient(135deg,#e8f3ec,#dfeee4);display:grid;place-items:center;color:var(--green);font-size:44px}
 .card img{height:180px;width:100%;object-fit:cover}
 .card-body{padding:18px}
 .card-body h4{color:var(--green-dark);margin-bottom:8px}
 .card-body p{color:var(--muted);font-size:.95rem}
-.features{background:#fff}
+.features{background:#e8eadf}
 .feature{background:var(--bg);border-radius:16px;padding:26px;text-align:center;border-top:4px solid var(--gold)}
 .feature .ic{font-size:34px;margin-bottom:10px}
 .feature h4{color:var(--green-dark);margin-bottom:8px}
 .feature p{color:var(--muted);font-size:.95rem}
-.videos iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:14px;background:#000}
+.videos{background:#172b1b;color:#fff}
+.videos .title h3{color:#fff}.videos .title p{color:#d7dfd1}
+.videos iframe,.feature-film{width:100%;aspect-ratio:16/9;border:0;border-radius:16px;background:#000;display:block;box-shadow:0 16px 45px rgba(0,0,0,.3)}
+.film-frame{max-width:960px;margin:0 auto;border:1px solid rgba(214,168,74,.55);border-radius:18px;padding:8px;background:rgba(255,255,255,.06)}
+.film-caption{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:18px 12px 9px}.film-caption strong{color:#f4d98e}.film-caption span{color:#d7dfd1;font-size:.92rem}
 .contact{background:linear-gradient(135deg,var(--green-dark),var(--green));color:#fff}
 .contact .title h3{color:#fff}
 .contact .title p{color:rgba(255,255,255,.85)}
@@ -94,7 +102,7 @@ textarea{min-height:90px;resize:vertical}
 .del{background:#c0392b;color:#fff;border:none;border-radius:8px;padding:6px 12px;cursor:pointer;font-family:inherit}
 .thumb{height:90px;width:auto;border-radius:10px;margin-top:8px;object-fit:cover}
 .toast{position:fixed;bottom:24px;right:24px;background:var(--green-dark);color:#fff;padding:12px 22px;border-radius:12px;z-index:200;display:none}
-@media(max-width:640px){.menu{display:none}.hero h2{font-size:1.6rem}.hero{padding:56px 0}}
+@media(max-width:640px){.menu{display:none}.hero{min-height:560px}.hero-content{padding-top:70px}.film-caption{display:block}.film-caption span{display:block;margin-top:5px}}
 </style>
 </head>
 <body>
@@ -116,8 +124,12 @@ textarea{min-height:90px;resize:vertical}
 </header>
 
 <section class="hero">
-  <div class="container">
+  <video class="hero-video" autoplay muted loop playsinline poster="">
+    <source src="./balad-heritage-film.mp4" type="video/mp4" />
+  </video>
+  <div class="container hero-content">
     <div class="big-logo" data-t="logoText">بلد</div>
+    <p class="eyebrow">من أرض بلد إلى كل بيت عراقي</p>
     <h2 data-t="heroTitle">معمل تعليب بلد للمنتجات الغذائية</h2>
     <p data-t="heroSubtitle">جودة عراقية أصيلة من قلب قضاء بلد – محافظة صلاح الدين، نقدم لكم معجون الطماطة والمنتجات الغذائية المعلبة بأعلى معايير الجودة والنظافة.</p>
     <a class="btn" href="#products" data-t="heroButton">تصفح منتجاتنا</a>
@@ -147,7 +159,14 @@ textarea{min-height:90px;resize:vertical}
 
 <section class="videos" id="videos">
   <div class="container">
-    <div class="title"><h3 data-t="videosTitle">من داخل المعمل</h3><p data-t="videosSubtitle">فيديوهات توضح مراحل الإنتاج</p></div>
+    <div class="title"><h3 data-t="videosTitle">من داخل المعمل</h3><p data-t="videosSubtitle">نظرة أقرب إلى بيئة العمل والجودة التي نهتم بها كل يوم</p></div>
+    <div class="film-frame">
+      <video class="feature-film" controls playsinline preload="metadata">
+        <source src="./balad-heritage-film.mp4" type="video/mp4" />
+        متصفحك لا يدعم تشغيل الفيديو.
+      </video>
+      <div class="film-caption"><strong>حكاية الجودة من بلد</strong><span>فيديو تعريفي من داخل أجواء المعمل</span></div>
+    </div>
     <div class="grid" id="videosGrid"></div>
   </div>
 </section>
@@ -240,7 +259,7 @@ textarea{min-height:90px;resize:vertical}
 
   var DEFAULTS={
     text:{}, 
-    style:{green:'#0f7a3d',greenDark:'#0a5b2c',gold:'#c9a227',bg:'#f7faf7',font:"'Segoe UI', Tahoma, Arial, sans-serif",size:16},
+    style:{green:'#466a3f',greenDark:'#172b1b',gold:'#d6a84a',bg:'#f3f0e7',font:"'Segoe UI', Tahoma, Arial, sans-serif",size:16},
     products:[
       {name:'معجون الطماطة',desc:'معجون طماطة طبيعي 100% من طماطة عراقية طازجة، مركّز وغني بالنكهة.',icon:'🍅',img:''},
       {name:'المخللات المشكلة',desc:'مخللات مشكلة بخلطة محلية مميزة، مقرمشة وطازجة.',icon:'🥒',img:''},
@@ -308,7 +327,6 @@ textarea{min-height:90px;resize:vertical}
 
     var vg=document.getElementById('videosGrid');
     var vids=data.videos.filter(function(v){return v && v.url;});
-    document.getElementById('videos').style.display=vids.length?'':'none';
     vg.innerHTML=vids.map(function(v){
       return '<div><iframe src="https://www.youtube.com/embed/'+ytId(v.url)+'" title="'+(v.title||'فيديو')+'" allowfullscreen loading="lazy"></iframe><p style="text-align:center;margin-top:8px;font-weight:700">'+(v.title||'')+'</p></div>';
     }).join('');

@@ -165,18 +165,20 @@ textarea{min-height:90px;resize:vertical}
 </section>
 
 <footer>
-  <p><span data-t="footerText">© 2026 معمل تعليب بلد للمنتجات الغذائية – جميع الحقوق محفوظة</span><span class="secret" id="secretSpot">.</span></p>
+  <p><span data-t="footerText">© 2026 معمل تعليب بلد للمنتجات الغذائية – جميع الحقوق محفوظة</span></p>
 </footer>
 
 <div class="overlay" id="loginOverlay">
   <div class="modal">
     <h3>الدخول إلى لوحة التحكم</h3>
-    <div class="field"><input type="password" id="pwInput" placeholder="كلمة المرور" /></div>
-    <p id="pwErr" style="color:#c0392b;display:none;margin-bottom:10px">كلمة المرور غير صحيحة</p>
+    <div class="field"><input type="text" id="userInput" placeholder="اسم المستخدم" autocomplete="username" /></div>
+    <div class="field"><input type="password" id="pwInput" placeholder="كلمة المرور" autocomplete="current-password" /></div>
+    <p id="pwErr" style="color:#c0392b;display:none;margin-bottom:10px">اسم المستخدم أو كلمة المرور غير صحيحة</p>
     <button class="btn" id="pwBtn">دخول</button>
     <button class="mini" style="background:#eee;margin-right:8px" id="pwCancel">إلغاء</button>
   </div>
 </div>
+
 
 <div class="panel" id="panel">
   <div class="panel-head">

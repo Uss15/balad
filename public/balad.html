@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>معمل تعليب بلد للمنتجات الغذائية</title>
+<meta name="description" content="معمل تعليب بلد للمنتجات الغذائية في قضاء بلد، صلاح الدين، العراق - معجون الطماطة والمخللات والمنتجات الغذائية." />
+<style>
+:root{
+  --green:#0f7a3d;
+  --green-dark:#0a5b2c;
+  --gold:#c9a227;
+  --white:#ffffff;
+  --bg:#f7faf7;
+  --text:#1d2b21;
+  --muted:#5c6b60;
+  --font:'Segoe UI', Tahoma, Arial, sans-serif;
+  --fsize:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);font-size:var(--fsize);background:var(--bg);color:var(--text);line-height:1.8}
+img{max-width:100%;display:block}
+.container{max-width:1120px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:50;background:var(--green);color:#fff;box-shadow:0 2px 12px rgba(0,0,0,.15)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px;max-width:1120px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.logo{width:46px;height:46px;flex:0 0 auto;border-radius:50%;background:var(--gold);color:var(--green-dark);display:grid;place-items:center;font-weight:900;font-size:18px}
+.brand h1{font-size:1.05rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.menu{display:flex;gap:18px;flex-wrap:wrap}
+.menu a{color:#fff;text-decoration:none;font-weight:600;opacity:.92}
+.menu a:hover{color:var(--gold)}
+.hero{background:linear-gradient(135deg,var(--green-dark),var(--green));color:#fff;padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:auto -80px -120px auto;width:320px;height:320px;border-radius:50%;background:rgba(201,162,39,.18)}
+.hero .big-logo{width:110px;height:110px;margin:0 auto 20px;border-radius:50%;background:var(--gold);color:var(--green-dark);display:grid;place-items:center;font-size:34px;font-weight:900;border:6px solid rgba(255,255,255,.25)}
+.hero h2{font-size:2.2rem;margin-bottom:10px}
+.hero p{max-width:640px;margin:0 auto 26px;opacity:.95}
+.btn{display:inline-block;background:var(--gold);color:#20180a;padding:12px 28px;border-radius:999px;text-decoration:none;font-weight:800;border:none;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+section{padding:64px 0}
+.title{text-align:center;margin-bottom:36px}
+.title h3{font-size:1.8rem;color:var(--green-dark);display:inline-block;position:relative;padding-bottom:12px}
+.title h3:after{content:"";position:absolute;bottom:0;right:25%;width:50%;height:4px;background:var(--gold);border-radius:4px}
+.title p{color:var(--muted);margin-top:10px}
+.about{background:#fff}
+.about-text{max-width:820px;margin:0 auto;text-align:center;color:var(--muted);font-size:1.05rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px}
+.card{background:#fff;border:1px solid #e6efe8;border-radius:16px;overflow:hidden;box-shadow:0 6px 20px rgba(15,122,61,.06);transition:.25s}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(15,122,61,.14)}
+.card .ph{height:180px;background:linear-gradient(135deg,#e8f3ec,#d7ead d);background:linear-gradient(135deg,#e8f3ec,#dfeee4);display:grid;place-items:center;color:var(--green);font-size:44px}
+.card img{height:180px;width:100%;object-fit:cover}
+.card-body{padding:18px}
+.card-body h4{color:var(--green-dark);margin-bottom:8px}
+.card-body p{color:var(--muted);font-size:.95rem}
+.features{background:#fff}
+.feature{background:var(--bg);border-radius:16px;padding:26px;text-align:center;border-top:4px solid var(--gold)}
+.feature .ic{font-size:34px;margin-bottom:10px}
+.feature h4{color:var(--green-dark);margin-bottom:8px}
+.feature p{color:var(--muted);font-size:.95rem}
+.videos iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:14px;background:#000}
+.contact{background:linear-gradient(135deg,var(--green-dark),var(--green));color:#fff}
+.contact .title h3{color:#fff}
+.contact .title p{color:rgba(255,255,255,.85)}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.cbox{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:24px;text-align:center}
+.cbox .ic{font-size:30px;color:var(--gold);margin-bottom:8px}
+.cbox a{color:#fff;text-decoration:none}
+footer{background:#0b2417;color:#cfe0d5;text-align:center;padding:26px 20px;font-size:.9rem}
+.secret{display:inline-block;width:26px;height:18px;cursor:default;vertical-align:middle;opacity:0}
+/* admin */
+.overlay{position:fixed;inset:0;background:rgba(8,20,13,.75);display:none;align-items:center;justify-content:center;z-index:100;padding:16px}
+.overlay.open{display:flex}
+.modal{background:#fff;border-radius:18px;padding:26px;width:100%;max-width:420px;text-align:center}
+.modal h3{color:var(--green-dark);margin-bottom:14px}
+input,textarea,select{width:100%;padding:11px 14px;border:1px solid #d7e3da;border-radius:10px;font-family:inherit;font-size:.95rem;background:#fff;color:var(--text)}
+textarea{min-height:90px;resize:vertical}
+.panel{position:fixed;inset:0;background:var(--bg);z-index:110;display:none;overflow:auto}
+.panel.open{display:block}
+.panel-head{background:var(--green-dark);color:#fff;padding:16px 20px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;position:sticky;top:0;z-index:5}
+.panel-head h3{font-size:1.05rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.panel-head .acts{display:flex;gap:8px;flex-shrink:0}
+.mini{padding:8px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:700;font-family:inherit}
+.mini.g{background:var(--gold);color:#20180a}
+.mini.w{background:rgba(255,255,255,.15);color:#fff}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;padding:16px 20px 0;max-width:1000px;margin:0 auto}
+.tab{padding:9px 16px;border-radius:999px;border:1px solid #d7e3da;background:#fff;cursor:pointer;font-family:inherit;font-weight:600}
+.tab.active{background:var(--green);color:#fff;border-color:var(--green)}
+.pane{display:none;max-width:1000px;margin:0 auto;padding:20px}
+.pane.active{display:block}
+.field{margin-bottom:14px}
+.field label{display:block;margin-bottom:6px;font-weight:700;font-size:.9rem;color:var(--green-dark)}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.item{background:#fff;border:1px solid #e6efe8;border-radius:14px;padding:16px;margin-bottom:14px}
+.item .top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+.del{background:#c0392b;color:#fff;border:none;border-radius:8px;padding:6px 12px;cursor:pointer;font-family:inherit}
+.thumb{height:90px;width:auto;border-radius:10px;margin-top:8px;object-fit:cover}
+.toast{position:fixed;bottom:24px;right:24px;background:var(--green-dark);color:#fff;padding:12px 22px;border-radius:12px;z-index:200;display:none}
+@media(max-width:640px){.menu{display:none}.hero h2{font-size:1.6rem}.hero{padding:56px 0}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="logo" data-t="logoText">بلد</div>
+      <h1 data-t="siteName">معمل تعليب بلد</h1>
+    </div>
+    <nav class="menu">
+      <a href="#about">من نحن</a>
+      <a href="#products">منتجاتنا</a>
+      <a href="#why">لماذا نحن</a>
+      <a href="#videos">فيديوهات</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="big-logo" data-t="logoText">بلد</div>
+    <h2 data-t="heroTitle">معمل تعليب بلد للمنتجات الغذائية</h2>
+    <p data-t="heroSubtitle">جودة عراقية أصيلة من قلب قضاء بلد – محافظة صلاح الدين، نقدم لكم معجون الطماطة والمنتجات الغذائية المعلبة بأعلى معايير الجودة والنظافة.</p>
+    <a class="btn" href="#products" data-t="heroButton">تصفح منتجاتنا</a>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="title"><h3 data-t="aboutTitle">من نحن</h3><p data-t="aboutSubtitle">قصة معمل عراقي</p></div>
+    <p class="about-text" data-t="aboutText">تأسس معمل تعليب بلد للمنتجات الغذائية في قضاء بلد بمحافظة صلاح الدين ليكون أحد الصروح الصناعية الغذائية في العراق. يعتمد المعمل على المحاصيل الزراعية المحلية من مزارع المنطقة الخصبة، ويحولها إلى منتجات معلبة عالية الجودة تصل إلى الأسواق العراقية كافة. ومنذ انطلاقته، يلتزم المعمل بمعايير السلامة الغذائية والنظافة، ويوفر فرص عمل لأبناء المنطقة، مساهماً في دعم الاقتصاد الوطني والصناعة العراقية.</p>
+  </div>
+</section>
+
+<section id="products">
+  <div class="container">
+    <div class="title"><h3 data-t="productsTitle">منتجاتنا</h3><p data-t="productsSubtitle">منتجات غذائية طبيعية معلبة بعناية</p></div>
+    <div class="grid" id="productsGrid"></div>
+  </div>
+</section>
+
+<section class="features" id="why">
+  <div class="container">
+    <div class="title"><h3 data-t="whyTitle">لماذا نحن</h3><p data-t="whySubtitle">مميزات تجعلنا خياركم الأول</p></div>
+    <div class="grid" id="featuresGrid"></div>
+  </div>
+</section>
+
+<section class="videos" id="videos">
+  <div class="container">
+    <div class="title"><h3 data-t="videosTitle">من داخل المعمل</h3><p data-t="videosSubtitle">فيديوهات توضح مراحل الإنتاج</p></div>
+    <div class="grid" id="videosGrid"></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="title"><h3 data-t="contactTitle">تواصل معنا</h3><p data-t="contactSubtitle">نسعد بخدمتكم والرد على استفساراتكم</p></div>
+    <div class="contact-grid">
+      <div class="cbox"><div class="ic">📍</div><h4>العنوان</h4><p data-t="address">العراق – محافظة صلاح الدين – قضاء بلد – المنطقة الصناعية</p></div>
+      <div class="cbox"><div class="ic">📞</div><h4>الهاتف</h4><p><a href="#" id="phoneLink" data-t="phone">+964 770 000 0000</a></p></div>
+      <div class="cbox"><div class="ic">✉️</div><h4>البريد الإلكتروني</h4><p data-t="email">info@balad-food.iq</p></div>
+      <div class="cbox"><div class="ic">🕘</div><h4>أوقات العمل</h4><p data-t="hours">السبت – الخميس: 8 صباحاً – 4 عصراً</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><span data-t="footerText">© 2026 معمل تعليب بلد للمنتجات الغذائية – جميع الحقوق محفوظة</span><span class="secret" id="secretSpot">.</span></p>
+</footer>
+
+<div class="overlay" id="loginOverlay">
+  <div class="modal">
+    <h3>الدخول إلى لوحة التحكم</h3>
+    <div class="field"><input type="password" id="pwInput" placeholder="كلمة المرور" /></div>
+    <p id="pwErr" style="color:#c0392b;display:none;margin-bottom:10px">كلمة المرور غير صحيحة</p>
+    <button class="btn" id="pwBtn">دخول</button>
+    <button class="mini" style="background:#eee;margin-right:8px" id="pwCancel">إلغاء</button>
+  </div>
+</div>
+
+<div class="panel" id="panel">
+  <div class="panel-head">
+    <h3>لوحة تحكم معمل تعليب بلد</h3>
+    <div class="acts">
+      <button class="mini g" id="saveBtn">حفظ</button>
+      <button class="mini w" id="resetBtn">استعادة</button>
+      <button class="mini w" id="closeBtn">خروج</button>
+    </div>
+  </div>
+  <div class="tabs">
+    <button class="tab active" data-pane="p-text">النصوص</button>
+    <button class="tab" data-pane="p-style">الألوان والخطوط</button>
+    <button class="tab" data-pane="p-prod">المنتجات</button>
+    <button class="tab" data-pane="p-feat">المميزات</button>
+    <button class="tab" data-pane="p-vid">الفيديوهات</button>
+  </div>
+  <div class="pane active" id="p-text"><div id="textFields"></div></div>
+  <div class="pane" id="p-style">
+    <div class="row">
+      <div class="field"><label>اللون الأخضر الأساسي</label><input type="color" id="cGreen" /></div>
+      <div class="field"><label>الأخضر الداكن</label><input type="color" id="cGreenDark" /></div>
+      <div class="field"><label>اللون الذهبي</label><input type="color" id="cGold" /></div>
+      <div class="field"><label>لون الخلفية</label><input type="color" id="cBg" /></div>
+      <div class="field"><label>نوع الخط</label>
+        <select id="fFont">
+          <option value="'Segoe UI', Tahoma, Arial, sans-serif">افتراضي (Segoe UI)</option>
+          <option value="Tahoma, Arial, sans-serif">Tahoma</option>
+          <option value="'Times New Roman', serif">Times New Roman</option>
+          <option value="Arial, sans-serif">Arial</option>
+          <option value="'Courier New', monospace">Courier New</option>
+        </select>
+      </div>
+      <div class="field"><label>حجم الخط (px)</label><input type="number" id="fSize" min="12" max="24" /></div>
+    </div>
+  </div>
+  <div class="pane" id="p-prod"><div id="prodList"></div><button class="btn" id="addProd">+ إضافة منتج</button></div>
+  <div class="pane" id="p-feat"><div id="featList"></div><button class="btn" id="addFeat">+ إضافة ميزة</button></div>
+  <div class="pane" id="p-vid"><div id="vidList"></div><button class="btn" id="addVid">+ إضافة فيديو</button></div>
+</div>
+
+<div class="toast" id="toast">تم الحفظ بنجاح ✔</div>
+
+<script>
+(function(){
+  var KEY='balad_site_data_v1', PASS='balad2025';
+
+  var TEXT_LABELS={
+    logoText:'نص الشعار', siteName:'اسم المعمل (الشريط العلوي)',
+    heroTitle:'عنوان القسم الرئيسي', heroSubtitle:'وصف القسم الرئيسي', heroButton:'نص الزر',
+    aboutTitle:'عنوان من نحن', aboutSubtitle:'وصف مختصر لمن نحن', aboutText:'نص من نحن',
+    productsTitle:'عنوان المنتجات', productsSubtitle:'وصف المنتجات',
+    whyTitle:'عنوان لماذا نحن', whySubtitle:'وصف لماذا نحن',
+    videosTitle:'عنوان الفيديوهات', videosSubtitle:'وصف الفيديوهات',
+    contactTitle:'عنوان التواصل', contactSubtitle:'وصف التواصل',
+    address:'العنوان', phone:'رقم الهاتف', email:'البريد الإلكتروني', hours:'أوقات العمل',
+    footerText:'نص التذييل'
+  };
+
+  var DEFAULTS={
+    text:{}, 
+    style:{green:'#0f7a3d',greenDark:'#0a5b2c',gold:'#c9a227',bg:'#f7faf7',font:"'Segoe UI', Tahoma, Arial, sans-serif",size:16},
+    products:[
+      {name:'معجون الطماطة',desc:'معجون طماطة طبيعي 100% من طماطة عراقية طازجة، مركّز وغني بالنكهة.',icon:'🍅',img:''},
+      {name:'المخللات المشكلة',desc:'مخللات مشكلة بخلطة محلية مميزة، مقرمشة وطازجة.',icon:'🥒',img:''},
+      {name:'الفاصوليا المعلبة',desc:'فاصوليا مطبوخة جاهزة للتقديم بجودة عالية وتعليب آمن.',icon:'🫘',img:''},
+      {name:'المربيات الطبيعية',desc:'مربى فواكه طبيعية بنكهات متعددة بدون مواد حافظة صناعية.',icon:'🍓',img:''}
+    ],
+    features:[
+      {icon:'🌱',title:'مواد أولية محلية',desc:'نعتمد على محاصيل مزارعي قضاء بلد وصلاح الدين.'},
+      {icon:'🏭',title:'خطوط إنتاج حديثة',desc:'معدات تعليب متطورة تضمن جودة ثابتة لكل عبوة.'},
+      {icon:'✅',title:'مطابقة للمواصفات',desc:'التزام كامل بمعايير الجودة والسلامة الغذائية العراقية.'},
+      {icon:'🤝',title:'دعم الصناعة الوطنية',desc:'فرص عمل لأبناء المنطقة ودعم للاقتصاد المحلي.'}
+    ],
+    videos:[]
+  };
+
+  // capture default texts from DOM
+  document.querySelectorAll('[data-t]').forEach(function(el){
+    var k=el.getAttribute('data-t');
+    if(DEFAULTS.text[k]===undefined) DEFAULTS.text[k]=el.textContent.trim();
+  });
+
+  function clone(o){return JSON.parse(JSON.stringify(o));}
+  var data=clone(DEFAULTS);
+  try{
+    var raw=localStorage.getItem(KEY);
+    if(raw){var s=JSON.parse(raw);
+      data.text=Object.assign({},DEFAULTS.text,s.text||{});
+      data.style=Object.assign({},DEFAULTS.style,s.style||{});
+      data.products=s.products||DEFAULTS.products;
+      data.features=s.features||DEFAULTS.features;
+      data.videos=s.videos||DEFAULTS.videos;
+    }
+  }catch(e){}
+
+  function ytId(url){
+    if(!url) return '';
+    var m=String(url).match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([A-Za-z0-9_-]{6,})/);
+    return m?m[1]:String(url).trim();
+  }
+
+  function render(){
+    document.querySelectorAll('[data-t]').forEach(function(el){
+      var k=el.getAttribute('data-t');
+      if(data.text[k]!==undefined) el.textContent=data.text[k];
+    });
+    var ph=document.getElementById('phoneLink');
+    if(ph) ph.href='tel:'+String(data.text.phone||'').replace(/[^\d+]/g,'');
+
+    var r=document.documentElement.style;
+    r.setProperty('--green',data.style.green);
+    r.setProperty('--green-dark',data.style.greenDark);
+    r.setProperty('--gold',data.style.gold);
+    r.setProperty('--bg',data.style.bg);
+    r.setProperty('--font',data.style.font);
+    r.setProperty('--fsize',data.style.size+'px');
+
+    document.getElementById('productsGrid').innerHTML=data.products.map(function(p){
+      var media=p.img?'<img src="'+p.img+'" alt="'+(p.name||'منتج')+'" />':'<div class="ph">'+(p.icon||'🥫')+'</div>';
+      return '<article class="card">'+media+'<div class="card-body"><h4>'+(p.name||'')+'</h4><p>'+(p.desc||'')+'</p></div></article>';
+    }).join('');
+
+    document.getElementById('featuresGrid').innerHTML=data.features.map(function(f){
+      return '<div class="feature"><div class="ic">'+(f.icon||'⭐')+'</div><h4>'+(f.title||'')+'</h4><p>'+(f.desc||'')+'</p></div>';
+    }).join('');
+
+    var vg=document.getElementById('videosGrid');
+    var vids=data.videos.filter(function(v){return v && v.url;});
+    document.getElementById('videos').style.display=vids.length?'':'none';
+    vg.innerHTML=vids.map(function(v){
+      return '<div><iframe src="https://www.youtube.com/embed/'+ytId(v.url)+'" title="'+(v.title||'فيديو')+'" allowfullscreen loading="lazy"></iframe><p style="text-align:center;margin-top:8px;font-weight:700">'+(v.title||'')+'</p></div>';
+    }).join('');
+  }
+
+  function save(){
+    localStorage.setItem(KEY,JSON.stringify(data));
+    render();
+    var t=document.getElementById('toast');t.style.display='block';
+    setTimeout(function(){t.style.display='none';},1800);
+  }
+
+  // ---- admin unlock ----
+  var clicks=0,timer=null;
+  document.getElementById('secretSpot').addEventListener('click',function(){
+    clicks++;clearTimeout(timer);
+    timer=setTimeout(function(){clicks=0;},1200);
+    if(clicks>=5){clicks=0;document.getElementById('loginOverlay').classList.add('open');document.getElementById('pwInput').focus();}
+  });
+  document.getElementById('pwCancel').onclick=function(){document.getElementById('loginOverlay').classList.remove('open');};
+  function tryLogin(){
+    if(document.getElementById('pwInput').value===PASS){
+      document.getElementById('pwErr').style.display='none';
+      document.getElementById('pwInput').value='';
+      document.getElementById('loginOverlay').classList.remove('open');
+      buildPanel();
+      document.getElementById('panel').classList.add('open');
+    } else {document.getElementById('pwErr').style.display='block';}
+  }
+  document.getElementById('pwBtn').onclick=tryLogin;
+  document.getElementById('pwInput').addEventListener('keydown',function(e){if(e.key==='Enter')tryLogin();});
+  document.getElementById('closeBtn').onclick=function(){document.getElementById('panel').classList.remove('open');};
+  document.getElementById('saveBtn').onclick=save;
+  document.getElementById('resetBtn').onclick=function(){
+    if(confirm('هل تريد استعادة الإعدادات الافتراضية؟ سيتم حذف كل التعديلات.')){
+      localStorage.removeItem(KEY);data=clone(DEFAULTS);buildPanel();render();
+    }
+  };
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.onclick=function(){
+      document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('active');});
+      document.querySelectorAll('.pane').forEach(function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      document.getElementById(t.dataset.pane).classList.add('active');
+    };
+  });
+
+  function fileToData(file,cb){
+    var fr=new FileReader();fr.onload=function(){cb(fr.result);};fr.readAsDataURL(file);
+  }
+
+  function buildPanel(){
+    // texts
+    var tf=document.getElementById('textFields');tf.innerHTML='';
+    Object.keys(TEXT_LABELS).forEach(function(k){
+      var wrap=document.createElement('div');wrap.className='field';
+      var long=(data.text[k]||'').length>90;
+      wrap.innerHTML='<label>'+TEXT_LABELS[k]+'</label>'+(long?'<textarea></textarea>':'<input type="text" />');
+      var inp=wrap.querySelector('input,textarea');
+      inp.value=data.text[k]||'';
+      inp.oninput=function(){data.text[k]=inp.value;render();};
+      tf.appendChild(wrap);
+    });
+    // style
+    var s=data.style;
+    var map={cGreen:'green',cGreenDark:'greenDark',cGold:'gold',cBg:'bg'};
+    Object.keys(map).forEach(function(id){
+      var el=document.getElementById(id);el.value=s[map[id]];
+      el.oninput=function(){data.style[map[id]]=el.value;render();};
+    });
+    var ff=document.getElementById('fFont');ff.value=s.font;
+    ff.onchange=function(){data.style.font=ff.value;render();};
+    var fs=document.getElementById('fSize');fs.value=s.size;
+    fs.oninput=function(){data.style.size=parseInt(fs.value||16,10);render();};
+    listProducts();listFeatures();listVideos();
+  }
+
+  function listProducts(){
+    var box=document.getElementById('prodList');box.innerHTML='';
+    data.products.forEach(function(p,i){
+      var d=document.createElement('div');d.className='item';
+      d.innerHTML='<div class="top"><strong>منتج '+(i+1)+'</strong><button class="del">حذف</button></div>'+
+        '<div class="row"><div class="field"><label>اسم المنتج</label><input class="n" type="text"/></div>'+
+        '<div class="field"><label>رمز تعبيري (بدون صورة)</label><input class="ic" type="text"/></div></div>'+
+        '<div class="field"><label>الوصف</label><textarea class="d"></textarea></div>'+
+        '<div class="field"><label>صورة المنتج</label><input class="f" type="file" accept="image/*"/></div>'+
+        (p.img?'<img class="thumb" src="'+p.img+'" alt="" />':'');
+      d.querySelector('.n').value=p.name||'';
+      d.querySelector('.ic').value=p.icon||'';
+      d.querySelector('.d').value=p.desc||'';
+      d.querySelector('.n').oninput=function(e){p.name=e.target.value;render();};
+      d.querySelector('.ic').oninput=function(e){p.icon=e.target.value;render();};
+      d.querySelector('.d').oninput=function(e){p.desc=e.target.value;render();};
+      d.querySelector('.f').onchange=function(e){
+        if(e.target.files[0]) fileToData(e.target.files[0],function(u){p.img=u;render();listProducts();});
+      };
+      d.querySelector('.del').onclick=function(){data.products.splice(i,1);render();listProducts();};
+      box.appendChild(d);
+    });
+  }
+  document.getElementById('addProd').onclick=function(){
+    data.products.push({name:'منتج جديد',desc:'وصف المنتج',icon:'🥫',img:''});render();listProducts();
+  };
+
+  function listFeatures(){
+    var box=document.getElementById('featList');box.innerHTML='';
+    data.features.forEach(function(f,i){
+      var d=document.createElement('div');d.className='item';
+      d.innerHTML='<div class="top"><strong>ميزة '+(i+1)+'</strong><button class="del">حذف</button></div>'+
+        '<div class="row"><div class="field"><label>الرمز</label><input class="ic" type="text"/></div>'+
+        '<div class="field"><label>العنوان</label><input class="t" type="text"/></div></div>'+
+        '<div class="field"><label>الوصف</label><textarea class="d"></textarea></div>';
+      d.querySelector('.ic').value=f.icon||'';d.querySelector('.t').value=f.title||'';d.querySelector('.d').value=f.desc||'';
+      d.querySelector('.ic').oninput=function(e){f.icon=e.target.value;render();};
+      d.querySelector('.t').oninput=function(e){f.title=e.target.value;render();};
+      d.querySelector('.d').oninput=function(e){f.desc=e.target.value;render();};
+      d.querySelector('.del').onclick=function(){data.features.splice(i,1);render();listFeatures();};
+      box.appendChild(d);
+    });
+  }
+  document.getElementById('addFeat').onclick=function(){
+    data.features.push({icon:'⭐',title:'ميزة جديدة',desc:'وصف الميزة'});render();listFeatures();
+  };
+
+  function listVideos(){
+    var box=document.getElementById('vidList');box.innerHTML='';
+    data.videos.forEach(function(v,i){
+      var d=document.createElement('div');d.className='item';
+      d.innerHTML='<div class="top"><strong>فيديو '+(i+1)+'</strong><button class="del">حذف</button></div>'+
+        '<div class="field"><label>العنوان</label><input class="t" type="text"/></div>'+
+        '<div class="field"><label>رابط يوتيوب</label><input class="u" type="text" placeholder="https://www.youtube.com/watch?v=..."/></div>';
+      d.querySelector('.t').value=v.title||'';d.querySelector('.u').value=v.url||'';
+      d.querySelector('.t').oninput=function(e){v.title=e.target.value;render();};
+      d.querySelector('.u').oninput=function(e){v.url=e.target.value;render();};
+      d.querySelector('.del').onclick=function(){data.videos.splice(i,1);render();listVideos();};
+      box.appendChild(d);
+    });
+  }
+  document.getElementById('addVid').onclick=function(){
+    data.videos.push({title:'فيديو جديد',url:''});render();listVideos();
+  };
+
+  render();
+})();
+</script>
+</body>
+</html>
